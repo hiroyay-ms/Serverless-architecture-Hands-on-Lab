@@ -6,8 +6,6 @@ Serverless architecture
 Hands-on lab step-by-step  
 February 2020
 
-
-
 ## Contents
 
 <!-- TOC -->
