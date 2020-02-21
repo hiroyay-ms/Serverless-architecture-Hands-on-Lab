@@ -1,10 +1,12 @@
+# Serverless architecture hands-on lab step-by-step
+
 ![Microsoft Cloud Workshop](images/ms-cloud-workshop.png)
 
 Serverless architecture  
 Hands-on lab step-by-step  
 February 2020
 
-# Serverless architecture hands-on lab step-by-step
+
 
 ## Contents
 
