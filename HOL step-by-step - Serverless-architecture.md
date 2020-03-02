@@ -154,11 +154,11 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 1. 作成したリソースの管理ブレードへ移動
 2. 「**アクセス制御 (IAM)**」をクリック
 
-   <img src="images/customRole-create-01.png" width="400" />
+   <img src="images/customRole-create-01.png" width="500" />
 
 3. 「カスタム ロールを作成する」の「**追加**」をクリック
 
-   <img src="images/customRole-create-02.png" width="400" />
+   <img src="images/customRole-create-02.png" width="500" />
 
 4. カスタム ロールの作成の「基本」ブレードで、次の構成オプションを指定
 
@@ -166,23 +166,23 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    b. ベースラインのアクセス許可（**ロールを複製します** を選択）
    c. 複製するロール（**共同作成者** を選択）
 
-   <img src="images/customRole-create-03.png" width="500" />
+   <img src="images/customRole-create-03.png" width="650" />
 
 5. 「次へ」をクリック
 6. 「アクセス許可」ブレードで割り当てられている許可/除外権限を確認  
 「**次へ**」をクリック
 
-   <img src="images/customRole-create-04.png" width="500" />
+   <img src="images/customRole-create-04.png" width="650" />
 
 7. 「割り当て可能なスコープ」ブレードで、現在のリソース グループが表示されていることを確認  
 「**確認と作成**」をクリック
 
-   <img src="images/customRole-create-05.png" width="500" />
+   <img src="images/customRole-create-05.png" width="650" />
 
 8. 「確認と作成」ブレードで「**作成**」をクリックし、プロビジョニングを開始
 9. リソース グループの「アクセス制御 (IAM)」タブで「ロールの割り当てを追加する」の「**追加**」をクリック
 
-   <img src="images/customRole-create-07.png" width="400" />
+   <img src="images/customRole-create-07.png" width="500" />
 
 0. 「ロール割り当ての追加」フォームで、次の構成オプションを指定
 
@@ -196,7 +196,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    ※ Azure AD 外のユーザーの場合、下記の招待メールが届きます。
 
-   <img src="images/customRole-invitation-mail.png" width="350" />
+   <img src="images/customRole-invitation-mail.png" width="500" />
 
    「Get Started」をクリックすることで、組織へのアクセス権が付与
 
