@@ -136,7 +136,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 2. 「**＋リソースの作成**」をクリックし、画面上部の検索ボックスに **resource** と入力  
    表示される候補から **Resource group** を選択
 
-      <img src="images\create-rg-01.png" />
+      <img src="images\create-rg-01.png" width="400" />
 
 3. リソース グループの作成ブレードで「作成」ボタンをクリック
 4. リソース グループ作成の「基本」ブレード内で、次の構成オプションを指定
@@ -144,7 +144,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    a. リソース グループ名（任意、サブスクリプション内で一意）  
    b. リージョン（任意、このワークショップで使用する地域）
 
-   <img src="images\create-rg-02.png" />
+   <img src="images\create-rg-02.png" width="500" />
 
 5. 「**確認および作成**」をクリック
 6. エラーがないことを確認し「**作成**」をクリックし、新しいリソース グループを作成
@@ -154,11 +154,11 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 1. 作成したリソースの管理ブレードへ移動
 2. 「**アクセス制御 (IAM)**」をクリック
 
-   <img src="images/customRole-create-01.png" />
+   <img src="images/customRole-create-01.png" width="400" />
 
 3. 「カスタム ロールを作成する」の「**追加**」をクリック
 
-   <img src="images/customRole-create-02.png" />
+   <img src="images/customRole-create-02.png" width="400" />
 
 4. カスタム ロールの作成の「基本」ブレードで、次の構成オプションを指定
 
@@ -166,37 +166,37 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    b. ベースラインのアクセス許可（**ロールを複製します** を選択）
    c. 複製するロール（**共同作成者** を選択）
 
-   <img src="images/customRole-create-03.png" />
+   <img src="images/customRole-create-03.png" width="500" />
 
 5. 「次へ」をクリック
 6. 「アクセス許可」ブレードで割り当てられている許可/除外権限を確認  
 「**次へ**」をクリック
 
-   <img src="images/customRole-create-04.png" />
+   <img src="images/customRole-create-04.png" width="500" />
 
 7. 「割り当て可能なスコープ」ブレードで、現在のリソース グループが表示されていることを確認  
 「**確認と作成**」をクリック
 
-   <img src="images/customRole-create-05.png" />
+   <img src="images/customRole-create-05.png" width="500" />
 
 8. 「確認と作成」ブレードで「**作成**」をクリックし、プロビジョニングを開始
 9. リソース グループの「アクセス制御 (IAM)」タブで「ロールの割り当てを追加する」の「**追加**」をクリック
 
-   <img src="images/customRole-create-07.png" />
+   <img src="images/customRole-create-07.png" width="400" />
 
 0. 「ロール割り当ての追加」フォームで、次の構成オプションを指定
 
    a. 役割（上記手順で作成したカスタム ロールを選択）  
    b. 選択（権限を付与するユーザーを選択）
 
-   <img src="images/customRole-create-08.png" />
+   <img src="images/customRole-create-08.png" width="350" />
 
    >作成した役割が表示されるまで時間がかかる場合があります。  
    Azure AD 外のユーザーを追加する場合は、メールアドレスを入力してください。
 
    ※ Azure AD 外のユーザーの場合、下記の招待メールが届きます。
 
-   <img src="images/customRole-invitation-mail.png" />
+   <img src="images/customRole-invitation-mail.png" width="350" />
 
    「Get Started」をクリックすることで、組織へのアクセス権が付与
 
