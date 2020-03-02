@@ -203,7 +203,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 1. カスタム グループへ追加したユーザーで Azure ポータルを開く
 2. 新しくリソース グループが追加できないことを確認
 
-   <img src="images/customRole-not-create.png" />
+   <img src="images/customRole-not-create.png" width="500" />
 
 ### Task 3: ストレージ アカウントのプロビジョニング
 
