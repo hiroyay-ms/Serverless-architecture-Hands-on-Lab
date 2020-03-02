@@ -21,12 +21,13 @@ February 2020
     - [Exercise 1: 環境のセットアップ](#exercise-1-環境のセットアップ)
         - [参考情報](#参考情報)
         - [Task 1: リソース グループの作成](#task-1-リソース-グループの作成)
-        - [Task 2: ストレージ アカウントのプロビジョニング](#task-2-ストレージ-アカウントのプロビジョニング)
-        - [Task 3: Function Apps のプロビジョニング](#task-3-function-apps-のプロビジョニング)
-        - [Task 4: Event Grid トピックのプロビジョニング](#task-4-event-grid-トピックのプロビジョニング)
-        - [Task 5: Azure Cosmos DB アカウントのプロビジョニング](#task-5-azure-cosmos-db-アカウントのプロビジョニング)
-        - [Task 6: Computer Vision API のプロビジョニング](#task-6-computer-vision-api-のプロビジョニング)
-        - [Task 7: Azure Key Vault のプロビジョニング](#task-7-azure-key-vault-のプロビジョニング)
+        - [Task 2: リソース グループへのアクセス権限の付与](#task-2-リソース-グループへのアクセス権限の付与)
+        - [Task 3: ストレージ アカウントのプロビジョニング](#task-2-ストレージ-アカウントのプロビジョニング)
+        - [Task 4: Function Apps のプロビジョニング](#task-3-function-apps-のプロビジョニング)
+        - [Task 5: Event Grid トピックのプロビジョニング](#task-4-event-grid-トピックのプロビジョニング)
+        - [Task 6: Azure Cosmos DB アカウントのプロビジョニング](#task-5-azure-cosmos-db-アカウントのプロビジョニング)
+        - [Task 7: Computer Vision API のプロビジョニング](#task-6-computer-vision-api-のプロビジョニング)
+        - [Task 8: Azure Key Vault のプロビジョニング](#task-7-azure-key-vault-のプロビジョニング)
     - [Exercise 2: 写真の処理を行う Azure Functions の開発と発行](#exercise-2-写真の処理を行う-azure-functions-の開発と発行)
         - [参考情報](#参考情報-1)
         - [Task 1: アプリケーション設定の構成](#task-1-アプリケーション設定の構成)
@@ -148,7 +149,63 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 5. 「**確認および作成**」をクリック
 6. エラーがないことを確認し「**作成**」をクリックし、新しいリソース グループを作成
 
-### Task 2: ストレージ アカウントのプロビジョニング
+### **Task 2**: リソース グループへのアクセス権限の付与
+
+1. 作成したリソースの管理ブレードへ移動
+2. 「**アクセス制御 (IAM)**」をクリック
+
+   <img src="images/customRole-create-01.png" />
+
+3. 「カスタム ロールを作成する」の「**追加**」をクリック
+
+   <img src="images/customRole-create-02.png" />
+
+4. カスタム ロールの作成の「基本」ブレードで、次の構成オプションを指定
+
+   a. カスタム ロール名（任意）
+   b. ベースラインのアクセス許可（**ロールを複製します** を選択）
+   c. 複製するロール（**共同作成者** を選択）
+
+   <img src="images/customRole-create-03.png" />
+
+5. 「次へ」をクリック
+6. 「アクセス許可」ブレードで割り当てられている許可/除外権限を確認  
+「**次へ**」をクリック
+
+   <img src="images/customRole-create-04.png" />
+
+7. 「割り当て可能なスコープ」ブレードで、現在のリソース グループが表示されていることを確認  
+「**確認と作成**」をクリック
+
+   <img src="images/customRole-create-05.png" />
+
+8. 「確認と作成」ブレードで「**作成**」をクリックし、プロビジョニングを開始
+9. リソース グループの「アクセス制御 (IAM)」タブで「ロールの割り当てを追加する」の「**追加**」をクリック
+
+   <img src="images/customRole-create-07.png" />
+
+0. 「ロール割り当ての追加」フォームで、次の構成オプションを指定
+
+   a. 役割（上記手順で作成したカスタム ロールを選択）  
+   b. 選択（権限を付与するユーザーを選択）
+
+   <img src="images/customRole-create-08.png" />
+
+   >作成した役割が表示されるまで時間がかかる場合があります。  
+   Azure AD 外のユーザーを追加する場合は、メールアドレスを入力してください。
+
+   ※ Azure AD 外のユーザーの場合、下記の招待メールが届きます。
+
+   <img src="images/customRole-invitation-mail.png" />
+
+   「Get Started」をクリックすることで、組織へのアクセス権が付与
+
+1. カスタム グループへ追加したユーザーで Azure ポータルを開く
+2. 新しくリソース グループが追加できないことを確認
+
+   <img src="images/customRole-not-create.png" />
+
+### Task 3: ストレージ アカウントのプロビジョニング
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
 2. 「**＋リソースの作成**」をクリックし、「ストレージ」-「ストレージ アカウント」を選択
@@ -186,7 +243,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    ![Create Container](images/create-container-02.png "Create Container")
 
-### Task 3: Function Apps のプロビジョニング
+### Task 4: Function Apps のプロビジョニング
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
 2. 「＋リソースの作成」をクリックし、画面上部の検索ボックスに **function** と入力  
@@ -224,7 +281,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
     （2 つ目の Function App の基本ブレード ... TollBoothEvent\*\*\* の名前で作成）
     <img src="images/new-function2-Basic.png" width="500" />
 
-### Task 4: Event Grid トピックのプロビジョニング
+### Task 5: Event Grid トピックのプロビジョニング
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
 2. 「**＋リソースの作成**」をクリックし、画面上部の検索ボックスに **event grid** と入力  
@@ -244,7 +301,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
 5. 「**作成**」をクリック
 
-### Task 5: Azure Cosmos DB アカウントのプロビジョニング
+### Task 6: Azure Cosmos DB アカウントのプロビジョニング
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
 2. 「**＋リソースの作成**」をクリックし、「データベース」-「Azure Cosmos DB」を選択
@@ -301,7 +358,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
       <img src="images/cosmosdb-add-container-completed.png" width="500" />
 
-### Task 6: Computer Vision API のプロビジョニング
+### Task 7: Computer Vision API のプロビジョニング
 
 1.  Azure ポータル（<https://portal.azure.com>）を開く
 2.  「**＋リソースの作成**」をクリックし、画面上部の検索ボックスに **computer vision** と入力  
@@ -321,7 +378,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
 5.  「**作成**」をクリック
 
-### Task 7: Azure Key Vault のプロビジョニング
+### Task 8: Azure Key Vault のプロビジョニング
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
 2. 「＋リソースの作成」をクリックし、画面上部の検索ボックスに **key vault** と入力  
