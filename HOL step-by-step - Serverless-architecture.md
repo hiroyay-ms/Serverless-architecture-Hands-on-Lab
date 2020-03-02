@@ -136,7 +136,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 2. 「**＋リソースの作成**」をクリックし、画面上部の検索ボックスに **resource** と入力  
    表示される候補から **Resource group** を選択
 
-      <img src="images\create-rg-01.png" width="400" />
+      <img src="images\create-rg-01.png" />
 
 3. リソース グループの作成ブレードで「作成」ボタンをクリック
 4. リソース グループ作成の「基本」ブレード内で、次の構成オプションを指定
@@ -144,7 +144,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    a. リソース グループ名（任意、サブスクリプション内で一意）  
    b. リージョン（任意、このワークショップで使用する地域）
 
-   <img src="images\create-rg-02.png" width="500" />
+   <img src="images\create-rg-02.png" />
 
 5. 「**確認および作成**」をクリック
 6. エラーがないことを確認し「**作成**」をクリックし、新しいリソース グループを作成
