@@ -278,8 +278,8 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 10. 「**作成**」をクリック
 11. 1-10 のステップを繰り返し、新しい Function App をもう１つプロビジョニング
 
-    （2 つ目の Function App の基本ブレード ... TollBoothEvent\*\*\* の名前で作成）
-    <img src="images/new-function2-Basic.png" width="500" />
+    （2 つ目の Function App の基本ブレード ... TollBoothEvent\*\*\* の名前で作成）  
+    <img src="images/new-function2-basic.png" width="500" />
 
 ### Task 5: Event Grid トピックのプロビジョニング
 
