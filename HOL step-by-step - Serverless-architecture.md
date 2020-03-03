@@ -226,7 +226,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    <img src="images/create-blob-03.png" width="300" />
 
-7. ストレージ アカウントのブレードでメニュー内の**アクセス キー**を選択し key 1 の接続文字列をコピー
+7. ストレージ アカウントのブレードでメニュー内の**アクセス キー**を選択し key 1 の<u>接続文字列</u>をコピー
 
    <img src="images/blob-storage-key.png" width="300" />
 
