@@ -1,4 +1,3 @@
-# Serverless architecture hands-on lab step-by-step
 
 ![Microsoft Cloud Workshop](images/ms-cloud-workshop.png)
 
@@ -10,66 +9,65 @@ February 2020
 
 <!-- TOC -->
 
-- [Serverless architecture hands-on lab step-by-step](#serverless-architecture-hands-on-lab-step-by-step)
-    - [Contents](#contents)
-    - [学習目標](#学習目標)
-    - [シナリオ](#シナリオ)
-    - [ソリューション アーキテクチャ](#ソリューション-アーキテクチャ)
-    - [必要条件](#必要条件)
-    - [Exercise 1: 環境のセットアップ](#exercise-1-環境のセットアップ)
-        - [参考情報](#参考情報)
-        - [Task 1: リソース グループの作成](#task-1-リソース-グループの作成)
-        - [Task 2: リソース グループへのアクセス権限の付与](#task-2-リソース-グループへのアクセス権限の付与)
-        - [Task 3: ストレージ アカウントのプロビジョニング](#task-2-ストレージ-アカウントのプロビジョニング)
-        - [Task 4: Function Apps のプロビジョニング](#task-3-function-apps-のプロビジョニング)
-        - [Task 5: Event Grid トピックのプロビジョニング](#task-4-event-grid-トピックのプロビジョニング)
-        - [Task 6: Azure Cosmos DB アカウントのプロビジョニング](#task-5-azure-cosmos-db-アカウントのプロビジョニング)
-        - [Task 7: Computer Vision API のプロビジョニング](#task-6-computer-vision-api-のプロビジョニング)
-        - [Task 8: Azure Key Vault のプロビジョニング](#task-7-azure-key-vault-のプロビジョニング)
-    - [Exercise 2: 写真の処理を行う Azure Functions の開発と発行](#exercise-2-写真の処理を行う-azure-functions-の開発と発行)
-        - [参考情報](#参考情報-1)
-        - [Task 1: アプリケーション設定の構成](#task-1-アプリケーション設定の構成)
-        - [Task 2: Key Vault へアクセスするためのシステム割り当てマネージド ID の生成](#task-2-key-vault-へアクセスするためのシステム割り当てマネージド-id-の生成)
-        - [Task 3: Key Vault へのアクセス許可を付与するアクセス ポリシーの作成](#task-3-key-vault-へのアクセス許可を付与するアクセス-ポリシーの作成)
-        - [Task 4: ProcessImage 関数の開発](#task-4-processimage-関数の開発)
-        - [Task 5: Visual Studio から Function App の公開](#task-5-visual-studio-から-function-app-の公開)
-    - [Exercise 3: Azure ポータルでの Function App の開発](#exercise-3-azure-ポータルでの-function-app-の開発)
-        - [参考情報](#参考情報-2)
-        - [Task 1: ライセンス プレート データを Cosmos DB に保存する関数の作成](#task-1-ライセンス-プレート-データを-cosmos-db-に保存する関数の作成)
-        - [Task 2: 関数への Event Grid サブスクリプションの追加](#task-2-関数への-event-grid-サブスクリプションの追加)
-        - [Task 3: 関数への Cosmos DB 出力の追加](#task-3-関数への-cosmos-db-出力の追加)
-        - [Task 4: run.csx へのコードの記述](#task-4-runcsx-へのコードの記述)
-        - [Task 5: 手動検証データを Cosmos DB へ保存する関数の作成](#task-5-手動検証データを-cosmos-db-へ保存する関数の作成)
-        - [Task 6: 関数への Event Grid サブスクリプションの追加](#task-6-関数への-event-grid-サブスクリプションの追加)
-        - [Task 7: 関数への Cosmos DB 出力の追加](#task-7-関数への-cosmos-db-出力の追加)
-        - [Task 8: run.csx へのコードの記述](#task-8-runcsx-へのコードの記述)
-    - [Exercise 4: Application Insights による Azure Functions の監視](#exercise-4-application-insights-による-azure-functions-の監視)
-        - [参考情報](#参考情報-3)
-        - [Task 1: Application Insights インスタンスのプロビジョニング](#task-1-application-insights-インスタンスのプロビジョニング)
-        - [Task 2: Function App での Application Insights の有効化](#task-2-function-app-での-application-insights-の有効化)
-        - [Task 3: ライブ メトリックス ストリーム を使用したリアルタイム監視](#task-3-ライブ-メトリックス-ストリーム-を使用したリアルタイム監視)
-        - [Task 4: Azure Functions の動的スケーリングの監視](#task-4-azure-functions-の動的スケーリングの監視)
-    - [Exercise 5: Azure Cosmos DB 内のデータ探索](#exercise-5-azure-cosmos-db-内のデータ探索)
-        - [参考情報](#参考情報-4)
-        - [Task 1: Azure Cosmos DB データ エクスプローラーの使用](#task-1-azure-cosmos-db-データ-エクスプローラーの使用)
-    - [Exercise 6: データ エクスポート ワークフローの作成](#exercise-6-データ-エクスポート-ワークフローの作成)
-        - [参考情報](#参考情報-5)
-        - [Task 1: Logic App の作成](#task-1-logic-app-の作成)
-    - [Exercise 7: Function App の CI/CD 構成](#exercise-7-function-app-の-cicd-構成)
-        - [参考情報](#参考情報-6)
-        - [Task 1: Azure DevOps 組織とプロジェクトの作成](#task-1-azure-devops-組織とプロジェクトの作成)
-        - [Task 2: プロジェクトへのユーザーの追加](#task-2-プロジェクトへのユーザーの追加)
-        - [Task 3: Azure Repos へのソース コードの追加](#task-3-azure-repos-へのソース-コードの追加)
-        - [Task 4: Azure Pipelines の作成](#task-4-azure-pipelines-の作成)
-        - [Task 5: ブランチの作成と ExportLicensePlates 関数の変更](#task-5-ブランチの作成と-exportlicenseplates-関数の変更)
-        - [Task 6: プルリクエストの作成](#task-6-プルリクエストの作成)
-        - [Task 7: ブランチのマージと新バージョンの Azure への展開](#task-7-ブランチのマージと新バージョンの-azure-への展開)
-    - [Exercise 8: ワークフローの実行とエクスポート データの確認](#exercise-8-ワークフローの実行とエクスポート-データの確認)
-        - [Task 1: Logic App の実行](#task-1-logic-app-の実行)
-        - [Task 2: エクスポートされた CSV ファイルの表示](#task-2-エクスポートされた-csv-ファイルの表示)
-    - [ワークショップの終了](#ワークショップの終了)
-        - [Task 1: リソース グループの削除](#task-1-リソース-グループの削除)
-        - [Task 2: Azure DevOps プロジェクトの削除](#task-2-azure-devops-プロジェクトの削除)
+- [Contents](#contents)
+- [学習目標](#学習目標)
+- [シナリオ](#シナリオ)
+- [ソリューション アーキテクチャ](#ソリューション-アーキテクチャ)
+- [必要条件](#必要条件)
+- [Exercise 1: 環境のセットアップ](#exercise-1-環境のセットアップ)
+    - [参考情報](#参考情報)
+    - [Task 1: リソース グループの作成](#task-1-リソース-グループの作成)
+    - [Task 2: リソース グループへのアクセス権限の付与](#task-2-リソース-グループへのアクセス権限の付与)
+    - [Task 3: ストレージ アカウントのプロビジョニング](#task-3-ストレージ-アカウントのプロビジョニング)
+    - [Task 4: Function Apps のプロビジョニング](#task-4-function-apps-のプロビジョニング)
+    - [Task 5: Event Grid トピックのプロビジョニング](#task-5-event-grid-トピックのプロビジョニング)
+    - [Task 6: Azure Cosmos DB アカウントのプロビジョニング](#task-6-azure-cosmos-db-アカウントのプロビジョニング)
+    - [Task 7: Computer Vision API のプロビジョニング](#task-7-computer-vision-api-のプロビジョニング)
+    - [Task 8: Azure Key Vault のプロビジョニング](#task-8-azure-key-vault-のプロビジョニング)
+- [Exercise 2: 写真の処理を行う Azure Functions の開発と発行](#exercise-2-写真の処理を行う-azure-functions-の開発と発行)
+    - [参考情報](#参考情報-1)
+    - [Task 1: アプリケーション設定の構成](#task-1-アプリケーション設定の構成)
+    - [Task 2: Key Vault へアクセスするためのシステム割り当てマネージド ID の生成](#task-2-key-vault-へアクセスするためのシステム割り当てマネージド-id-の生成)
+    - [Task 3: Key Vault へのアクセス許可を付与するアクセス ポリシーの作成](#task-3-key-vault-へのアクセス許可を付与するアクセス-ポリシーの作成)
+    - [Task 4: ProcessImage 関数の開発](#task-4-processimage-関数の開発)
+    - [Task 5: Visual Studio から Function App の公開](#task-5-visual-studio-から-function-app-の公開)
+- [Exercise 3: Azure ポータルでの Function App の開発](#exercise-3-azure-ポータルでの-function-app-の開発)
+    - [参考情報](#参考情報-2)
+    - [Task 1: ライセンス プレート データを Cosmos DB に保存する関数の作成](#task-1-ライセンス-プレート-データを-cosmos-db-に保存する関数の作成)
+    - [Task 2: 関数への Event Grid サブスクリプションの追加](#task-2-関数への-event-grid-サブスクリプションの追加)
+    - [Task 3: 関数への Cosmos DB 出力の追加](#task-3-関数への-cosmos-db-出力の追加)
+    - [Task 4: run.csx へのコードの記述](#task-4-runcsx-へのコードの記述)
+    - [Task 5: 手動検証データを Cosmos DB へ保存する関数の作成](#task-5-手動検証データを-cosmos-db-へ保存する関数の作成)
+    - [Task 6: 関数への Event Grid サブスクリプションの追加](#task-6-関数への-event-grid-サブスクリプションの追加)
+    - [Task 7: 関数への Cosmos DB 出力の追加](#task-7-関数への-cosmos-db-出力の追加)
+    - [Task 8: run.csx へのコードの記述](#task-8-runcsx-へのコードの記述)
+- [Exercise 4: Application Insights による Azure Functions の監視](#exercise-4-application-insights-による-azure-functions-の監視)
+    - [参考情報](#参考情報-3)
+    - [Task 1: Application Insights インスタンスのプロビジョニング](#task-1-application-insights-インスタンスのプロビジョニング)
+    - [Task 2: Function App での Application Insights の有効化](#task-2-function-app-での-application-insights-の有効化)
+    - [Task 3: ライブ メトリックス ストリーム を使用したリアルタイム監視](#task-3-ライブ-メトリックス-ストリーム-を使用したリアルタイム監視)
+    - [Task 4: Azure Functions の動的スケーリングの監視](#task-4-azure-functions-の動的スケーリングの監視)
+- [Exercise 5: Azure Cosmos DB 内のデータ探索](#exercise-5-azure-cosmos-db-内のデータ探索)
+    - [参考情報](#参考情報-4)
+    - [Task 1: Azure Cosmos DB データ エクスプローラーの使用](#task-1-azure-cosmos-db-データ-エクスプローラーの使用)
+- [Exercise 6: データ エクスポート ワークフローの作成](#exercise-6-データ-エクスポート-ワークフローの作成)
+    - [参考情報](#参考情報-5)
+    - [Task 1: Logic App の作成](#task-1-logic-app-の作成)
+- [Exercise 7: Function App の CI/CD 構成](#exercise-7-function-app-の-cicd-構成)
+    - [参考情報](#参考情報-6)
+    - [Task 1: Azure DevOps 組織とプロジェクトの作成](#task-1-azure-devops-組織とプロジェクトの作成)
+    - [Task 2: プロジェクトへのユーザーの追加](#task-2-プロジェクトへのユーザーの追加)
+    - [Task 3: Azure Repos へのソース コードの追加](#task-3-azure-repos-へのソース-コードの追加)
+    - [Task 4: Azure Pipelines の作成](#task-4-azure-pipelines-の作成)
+    - [Task 5: ブランチの作成と ExportLicensePlates 関数の変更](#task-5-ブランチの作成と-exportlicenseplates-関数の変更)
+    - [Task 6: プルリクエストの作成](#task-6-プルリクエストの作成)
+    - [Task 7: ブランチのマージと新バージョンの Azure への展開](#task-7-ブランチのマージと新バージョンの-azure-への展開)
+- [Exercise 8: ワークフローの実行とエクスポート データの確認](#exercise-8-ワークフローの実行とエクスポート-データの確認)
+    - [Task 1: Logic App の実行](#task-1-logic-app-の実行)
+    - [Task 2: エクスポートされた CSV ファイルの表示](#task-2-エクスポートされた-csv-ファイルの表示)
+- [ワークショップの終了](#ワークショップの終了)
+    - [Task 1: リソース グループの削除](#task-1-リソース-グループの削除)
+    - [Task 2: Azure DevOps プロジェクトの削除](#task-2-azure-devops-プロジェクトの削除)
 
 <!-- /TOC -->
 
@@ -112,9 +110,9 @@ Contoso 社では、高速道路などの料金所管理事業をより広いエ
 所要時間：30 分
 
 ソリューション開発を行う前に Azure でいくつかのリソースをプロビジョニングします。  
-クリーンアップを容易に行うために、すべてのリソースが同じリソース グループを使用するようにします。
+クリーンアップを容易に行うために、すべてのリソースが同じリソース グループを使用するよう設定します。
 
-この演習では、ホット層を使用して Blob ストレージ アカウントをプロビジョニングし、アップロードされた写真と出力された CSV ファイルを保存するための２つのコンテナー（images, export）を作成します。次に２つの Function Apps インスタンスをプロビジョニングします。１つは Visual Studio からデプロイし、もう１つは Azure ポータルを使用して管理します。そして新しい Event Grid トピックを作成します。その後、２つのコレクション（Processed, NeedsManualReview）を持つ Azure Cosmos DB アカウントを作成します。最後に、ナンバープレートにオブジェクト文字認識（OCR）を適用するための新しい Cognitive Services Computer Vision API サービスをプロビジョニングします。  
+この演習では、ホット層の Blob ストレージ アカウントをプロビジョニングし、アップロードされた写真と出力された CSV ファイルをそれぞれ保存するための２つのコンテナー（images, export）を作成します。次に２つの Function Apps プロビジョニングします。１つは Visual Studio からアプリをデプロイし、もう１つは Azure ポータルを使用して管理します。そして新しい Event Grid トピックを作成します。その後、２つのコレクション（Processed, NeedsManualReview）を持つ Azure Cosmos DB アカウントを作成します。最後に、ナンバープレートにオブジェクト文字認識（OCR）を適用するための新しい Cognitive Services Computer Vision API サービスをプロビジョニングします。  
 Application Insights は、後の手順で追加しますので、Function Apps プロビジョニング時の Application Insights の設定は "無効" にしておいてください。
 
 ### 参考情報
@@ -147,7 +145,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 5. 「**確認および作成**」をクリック
 6. エラーがないことを確認し「**作成**」をクリックし、新しいリソース グループを作成
 
-### **Task 2**: リソース グループへのアクセス権限の付与
+### Task 2: リソース グループへのアクセス権限の付与
 
 1. 作成したリソースの管理ブレードへ移動
 2. 「**アクセス制御 (IAM)**」をクリック
@@ -213,7 +211,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 3. ストレージ アカウントの作成の「基本」ブレードで、次の構成オプションを指定
 
    a. リソース グループ（先の手順で作成したリソース グループを選択）  
-   b. ストレージ アカウント名（任意：小文字と数字で 3 から 24 文字で指定、一意の名前）  
+   b. ストレージ アカウント名（任意：小文字と数字で 3 から 24 文字かつ一意の名前を入力）  
    c. 場所（リソース グループと同じ地域を指定）  
    d. パフォーマンス（**Standard** を選択）  
    e. アカウントの種類（**StorageV2** を選択）  
@@ -228,9 +226,13 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    <img src="images/create-blob-03.png" width="300" />
 
-7. ストレージ アカウントの管理ブレードが表示
-8. ストレージ アカウントの「Blob service」メニュー配下の「**コンテナー**」をクリック
-9. 以下の構成オプションを指定し、２つのコンテナーを作成
+7. ストレージ アカウントのブレードでメニュー内の**アクセス キー**を選択し key 1 の接続文字列をコピー
+
+   <img src="images/blob-storage-key.png" width="300" />
+
+8. ストレージ アカウントの管理ブレードが表示
+9.  ストレージ アカウントの「Blob service」メニュー配下の「**コンテナー**」をクリック
+10. 以下の構成オプションを指定し、２つのコンテナーを作成
 
    a. 名前（**images**, **export**）  
    b. パブリック アクセス レベル（**プライベート**）
@@ -253,9 +255,9 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 4. 関数アプリの「基本」ブレード内で、以下の構成オプションを指定
 
    a. リソース グループ（先の手順で作成したリソース グループを選択）  
-   b. 関数アプリ名（名前は 2 文字以上、一意の名前 ... TollBoothFunctionApp**\* の名前で作成）  
+   b. 関数アプリ名（名前は 2 文字以上かつ一意の名前で、例えば **TollBoothFunctionApp + {任意の文字列}** で作成）  
    c. 公開（**コード** を選択）  
-   d. ランタイム スタック（**.NET Core\*\* を選択）  
+   d. ランタイム スタック（**.NET Core** を選択）  
    e. 地域（リソース グループと同じ地域を指定）  
    <img src="images/new-function1-basic.png" width="500" />
 
@@ -274,9 +276,9 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
 9. 「**確認および作成**」をクリック
 10. 「**作成**」をクリック
-11. 1-10 のステップを繰り返し、新しい Function App をもう１つプロビジョニング
+11. 1-10 のステップを繰り返し、新しい Function App を<u>もう１つ</u>プロビジョニング
 
-    （2 つ目の Function App の基本ブレード ... TollBoothEvent\*\*\* の名前で作成）  
+    （2 つ目の Function App の基本ブレードから例えば **TollBoothEvent + {任意の文字列}** の名前で作成）  
     <img src="images/new-function2-basic.png" width="500" />
 
 ### Task 5: Event Grid トピックのプロビジョニング
@@ -298,6 +300,17 @@ Application Insights は、後の手順で追加しますので、Function Apps 
       <img src="images/new-eventgrid-topic.png" width="500" />
 
 5. 「**作成**」をクリック
+6. 作成完了後、リソースへ移動し「**概要**」から "トピック エンドポイント"をコピー
+
+      <img src="images/eventgrid-topic-01.png" width="500" />
+
+7. メニュー内の 「**アクセス キー**」を選択
+8. アクセス キーのブレードから、Key 1 の値をコピー
+
+      <img src="images/eventgrid-topic-02.png" width="500" />
+   
+
+9. 後ほど参照するためにノートパッドなどのエディタに貼り付けておく
 
 ### Task 6: Azure Cosmos DB アカウントのプロビジョニング
 
@@ -356,6 +369,14 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
       <img src="images/cosmosdb-add-container-completed.png" width="500" />
 
+14. メニュー ブレードから、「**キー**」を選択
+15. "読み取り/書き込みキー" の **URI** と**プライマリ キー**をコピー
+
+      <img src="images/cosmosdb-key.png" width="500" />
+
+16. 後ほど参照するためにノートパッドなどのエディタに貼り付けておく
+
+
 ### Task 7: Computer Vision API のプロビジョニング
 
 1.  Azure ポータル（<https://portal.azure.com>）を開く
@@ -375,6 +396,10 @@ Application Insights は、後の手順で追加しますので、Function Apps 
        <img src="images/create-computer-vision-api.png" width="500" />
 
 5.  「**作成**」をクリック
+6.  Computer Vision API 作成後、リソースへ移動し 「**概要**」から**エンドポイント**と **Key** をコピー
+
+       <img src="images/computer-vision-key.png" width="500" />
+
 
 ### Task 8: Azure Key Vault のプロビジョニング
 
@@ -418,7 +443,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    |cosmosDBAuthorizationKey| Cosmos DB Primary Key|
    |blobStorageConnection|Blob storage connection string|
 
-   シークレット作成後の画面には以下のリストが表示
+   シークレット作成後の画面には以下のようなリストが表示される
 
    ![Secret List](images/key-vault-secret-02.png "Secret List")
 
