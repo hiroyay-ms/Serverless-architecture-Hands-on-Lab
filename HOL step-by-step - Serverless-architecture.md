@@ -117,14 +117,10 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
 ### 参考情報
 
-- ストレージ アカウントの作成 (blob ホット層)  
-  <https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json%23create-a-storage-account>
-- Function App の作成  
-  <https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal>
-- Event Grid の概念  
-  <https://docs.microsoft.com/azure/event-grid/concepts>
-- Cosmos アカウントの管理  
-  <https://docs.microsoft.com/azure/cosmos-db/manage-account>
+- [ストレージ アカウントの作成 (blob ホット層)](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json%23create-a-storage-account)
+- [Function App の作成](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal)
+- [Event Grid の概念](https://docs.microsoft.com/azure/event-grid/concepts)
+- [Cosmos アカウントの管理](https://docs.microsoft.com/azure/cosmos-db/manage-account)
 
 ### Task 1: リソース グループの作成
 
@@ -451,32 +447,26 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
 所要時間：45 分
 
-Visual Studio に統合された Azure Functions ツールを使用して、ローカル環境で関数を開発およびデバッグし、Azure に展開します。TollBooth ソリューションには、必要なコードのほとんどが含まれています。Azure に展開する前に不足しているコードを追加する必要があります。（コードを追加する箇所は TODO としてマークされています。）  
-Visual Studio から Azure に展開する前に Azure ポータルで Function App にアプリケーション設定を構成します。誤ってセキュリティ情報が漏洩しないようにアプリケーション設定には、Cosmos DB の接続文字列や Comuputer Vision API の API Key 直接記述するのではなく、Key Vault シークレットの URI を参照するように指定します。Function App が Key Vault にアクセスしてシークレットにアクセスできるように Function App へシステム割り当てマネージド ID を設定し、Key Vault 側にアクセス許可を与えるためのアクセス ポリシーを作成します。
+Visual Studio に統合された Azure Functions ツールを使用して、ローカル環境で関数を開発およびデバッグし、Azure に展開します。TollBooth ソリューションには、必要なコードのほとんどが含まれていますが、Azure に展開する前に不足しているコードを追加する必要があります。（コードを追加する箇所は TODO としてマークされています。）  
+Visual Studio から Azure に展開する前に Azure ポータルで Function App にアプリケーション設定を構成します。誤ってセキュリティ情報が漏洩しないようにアプリケーション設定には、Cosmos DB の接続文字列や Comuputer Vision API の API Key 直接記述するのではなく、Key Vault シークレットの URI (シークレット識別子) を参照するように指定します。Function App が Key Vault にアクセスしてシークレットにアクセスできるように Function App へシステム割り当てマネージド ID を設定し、Key Vault 側にアクセス許可を与えるためのアクセス ポリシーを作成します。
 
 > 注意：NuGet パッケージのバージョンは更新しないでください。  
 > このソリューションは、現在定義されている NuGet パッケージのバージョンで動作するように構築されています。
 
 ### 参考情報
 
-- App Service と Azure Functions の Key Vault 参照を使用する  
-  <https://docs.microsoft.com/azure/app-service/app-service-key-vault-references>
-- App Service と Azure Functions でマネージド ID を使用する方法  
-  <https://docs.microsoft.com/azure/app-service/overview-managed-identity>
-- キー コンテナーへのアクセスをセキュリティで保護する  
-  <https://docs.microsoft.com/ja-jp/azure/key-vault/key-vault-secure-your-key-vault>
-- マネージド ID で Key Vault の認証を提供する  
-  <https://docs.microsoft.com/azure/key-vault/managed-identity>
-- Visual Studio を使用する Azure Functions の開発  
-  <https://docs.microsoft.com/azure/azure-functions/functions-develop-vs>
-- Azure Functions Core Tools の操作  
-  <https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=windows>
+- [App Service と Azure Functions の Key Vault 参照を使用する](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references)
+- [App Service と Azure Functions でマネージド ID を使用する方法](https://docs.microsoft.com/azure/app-service/overview-managed-identity)
+- [キー コンテナーへのアクセスをセキュリティで保護する](https://docs.microsoft.com/ja-jp/azure/key-vault/key-vault-secure-your-key-vault)
+- [マネージド ID で Key Vault の認証を提供する](https://docs.microsoft.com/azure/key-vault/managed-identity)
+- [Visual Studio を使用する Azure Functions の開発](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs)
+- [Azure Functions Core Tools の操作](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=windows)
 
 ### Task 1: アプリケーション設定の構成
 
 1. Azure ポータル（<https://portal.azure.com>）を開く
-2. 先の手順で作成したリソース グループへ移動し、TollBoothFunctionApp**_ を選択  
-   TollBoothFunctionApp_** の名前で作成していない場合は、どちらか片方を選択
+2. 先の手順で作成したリソース グループへ移動し、TollBoothFunctionApp_ を選択  
+   TollBoothFunctionApp_ の名前で作成していない場合は、どちらか片方を選択
 
       <img src="images/select-functionapp.png" width="600" />
 
@@ -488,18 +478,19 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
    ![FunctionApp Application Settings](images/functionapp-application-settings-01.png)
 
-   |                          |                                                                                                                                                       |
+   |名前|値|
    | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | computerVisionApiUrl     | Computer Vision API のエンドポイントに **vision/v2.0/ocr** を追加して指定<br>`http://<YOUR-SERVICE-NAME>.cognitiveservices.azure.com/vision/v2.0/ocr` |
-   | computerVisionApiKey     | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **computerVisionApiKey** シークレットの URI を指定                |
+   | computerVisionApiUrl     | `http://<YOUR-SERVICE-NAME>.cognitiveservices.azure.com/vision/v2.0/ocr` <br />
+   Computer Vision API のエンドポイントに **vision/v2.0/ocr** を追加して指定|
+   | computerVisionApiKey     | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **computerVisionApiKey** シークレットの URI (シークレット識別子) を指定                |
    | eventGridTopicEndpoint   | Event Grid Topic のエンドポイント                                                                                                                     |
-   | eventGridTopicKey        | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **eventGridTopicKey** シークレットの URI を指定                   |
+   | eventGridTopicKey        | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **eventGridTopicKey** シークレットの URI (シークレット識別子) を指定                   |
    | cosmosDBEndPointUrl      | Cosmos DB URI                                                                                                                                         |
-   | cosmosDBAuthorizationKey | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **cosmosDBAuthorizationKey** シークレットの URI を指定            |
+   | cosmosDBAuthorizationKey | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **cosmosDBAuthorizationKey** シークレットの URI (シークレット識別子) を指定            |
    | cosmosDBDatabaseId       | **LicensePlates**（Cosmos DB データベース Id）                                                                                                        |
    | cosmosDBCollectionId     | **Processed**（Cosmos DB コレクション Id）                                                                                                            |
    | exportCsvContainerName   | **export**（Blob ストレージのコンテナー）                                                                                                             |
-   | blobStorageConnection    | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **blobStorageConnection** シークレットの URI を指定               |
+   | blobStorageConnection    | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **blobStorageConnection** シークレットの URI (シークレット識別子) を指定               |
 
    \*エンドポイントや API KEY, 接続文字列は各リソースの管理ブレードから取得  
    （例：Computer Vision API のエンドポイントとキーの取得）
@@ -509,6 +500,11 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
    \*アプリケーション設定の入力画面
 
    <img src="images/add-application-settings.png" width="600" />
+
+   \* Key Vault のシークレット URI は、対象 Key Vault の「シークレット」から目的のシークレットを選択して確認
+
+   <img src="images/add-secret-uri.png" width="600" />
+   
 
 5. 「**保存**」をクリック
 
@@ -561,7 +557,7 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
    ![Visual Studio ToDo List Menu](images/visual-studio-todo-list-menu.png "Visual Studio ToDo List Menu")
 
-3. TODO タスクの一覧が表示（各タスクは追加するコードの位置を示します。）
+3. TODO タスクの一覧を表示（各タスクは追加するコードの位置を示します。）
 
    <img src="images/visual-studio-todo-list.png" width="800" />
 
@@ -621,7 +617,7 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
    }
    ```
 
-   > TODO 5, 6, 7 は、あとのタスクで完了します。
+   > TODO 5, 6, 7 は、この後のタスクで完了します。
 
 ### Task 5: Visual Studio から Function App の公開
 
