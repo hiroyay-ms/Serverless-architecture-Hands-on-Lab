@@ -673,14 +673,12 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
 所要時間：45 分
 
-Azure ポータルを使用して .NET Core（C#）で２つの新しい関数を作成します。これらは Event Grid によってトリガーされ、ProcessImage 関数によって実行されるライセンス プレート処理の結果を保存するために Cosmos DB へ出力されます。
+Azure ポータルを使用して .NET Core（C#）で２つの新しい関数を作成します。これらの関数は Event Grid によってトリガーされ、ProcessImage 関数によるライセンス プレート処理の結果を保存するために Cosmos DB へ出力されます。
 
 ### 参考情報
 
-- Azure Portal で初めての関数を作成する  
-  <https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function>
-- Azure Functions と Cosmos DB を使用して非構造化データを格納する  
-  <https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb>
+- [Azure Portal で初めての関数を作成する](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
+- [Azure Functions と Cosmos DB を使用して非構造化データを格納する](https://docs.microsoft.com/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb)
 
 ### Task 1: ライセンス プレート データを Cosmos DB に保存する関数の作成
 
@@ -785,7 +783,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
    ```
 
 3. 「**保存**」をクリック
-4. ログに **Comlation succeeded** メッセージが表示されることを確認
+4. ログに **Compilation succeeded** メッセージが表示されることを確認
 
    ![Add Function App In-Portal-17](images/add-function-app-in-portal-17.png)
 
@@ -815,7 +813,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
    a. 名前（**queueplateformanualcheckupsub**）  
    b. イベント スキーマ（**イベント グリッド スキーマ** を選択）  
    c. トピックの種類（先の手順で作成した Event Grid トピックを選択）  
-   d. イベントの種類（イベントの種類のフィルターに **QueuePlateForManualCheckup** と入力）  
+   d. イベントの種類（イベントの種類のフィルターに **queuePlateForManualCheckup** と入力）  
    e. エンドポイントの詳細（QueuePlateForManualCheckup 関数）
 
    <img src="images/add-function-app-in-portal-21.png" width="500" />
@@ -863,7 +861,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
    ```
 
 3. 「**保存**」をクリック
-4. ログに **Comlation succeeded** メッセージが表示されることを確認
+4. ログに **Compilation succeeded** メッセージが表示されることを確認
 
 ## Exercise 4: Application Insights による Azure Functions の監視
 
