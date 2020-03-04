@@ -810,7 +810,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
 
 2. 「イベント サブスクリプションの作成」ブレードが表示されるので、以下の構成オプションを指定
 
-   a. 名前（**queueplateformanualcheckupsub**）  
+   a. 名前（**queueplatefor   manualcheckupsub**）  
    b. イベント スキーマ（**イベント グリッド スキーマ** を選択）  
    c. トピックの種類（先の手順で作成した Event Grid トピックを選択）  
    d. イベントの種類（イベントの種類のフィルターに **queuePlateForManualCheckup** と入力）  
@@ -869,14 +869,12 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
 
 Application Insights は Azure Functions と統合し、関数の堅牢な監視を提供します。  
 この演習では、新しい Application Insights をプロビジョニングし、テレメトリを送信するように Function App を構成します。  
-演習中に Computer Vision API のリクエストへのレート制限を行うよう価格レベルを変更します。意図的な遅延により、関数の応答時間が大幅に増加するため、動的スケーリングが開始されサーバーの割り当て数が増加します。ライブ メトリックス ビューを使用することで、これらすべてをリアルタイムで確認することが可能です。
+演習中に Computer Vision API のリクエストへのレート制限を行うよう価格レベルを変更します。意図的な遅延により、関数の応答時間が大幅に増加するため、動的にスケーリングが開始されサーバーの割り当て数が増加します。ライブ メトリックス ビューを使用することで、これらすべてをリアルタイムで確認することが可能です。
 
 ### 参考情報
 
-- Azure Functions の監視  
-  <https://docs.microsoft.com/azure/azure-functions/functions-monitoring>
-- Live Metrics Stream での監視と診断  
-  <https://docs.microsoft.com/azure/azure-monitor/app/live-stream>
+- [Azure Functions の監視](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
+- [Live Metrics Stream での監視と診断](https://docs.microsoft.com/azure/azure-monitor/app/live-stream)
 
 ### Task 1: Application Insights インスタンスのプロビジョニング
 
@@ -961,7 +959,7 @@ Application Insights は Azure Functions と統合し、関数の堅牢な監視
 
 8. コンソール ウィンドウが表示されるので、「**1**」 を入力し「**Enter**」キーを押下
 
-   <img src="images/uploadimages-1.png" width="500" />
+   <img src="images/UploadImages-1.png" width="500" />
 
    指定したストレージ アカウントの images コンテナーに画像ファイルをアップロード  
    ファイルをアップロード後はデバッグを終了し、コンソール アプリケーションを終了
@@ -975,7 +973,7 @@ Application Insights は Azure Functions と統合し、関数の堅牢な監視
     メニューより「**デバッグ**」-「**新しいインスタンスを開始**」を選択
 11. コンソール ウィンドウで、「**2**」 を入力し「**Enter**」キーを押下
 
-    <img src="images/uploadimages-2.png" width="500" />
+    <img src="images/UploadImages-2.png" width="500" />
 
     1,000 個の画像ファイルをアップロード
 
@@ -991,7 +989,8 @@ Application Insights は Azure Functions と統合し、関数の堅牢な監視
 2. メニューの「**価格レベル**」を選択し、「**F0 Free**」を選択後、「**選択**」をクリック
 
    <img src="images/computer-vision-price.png" width="600" />
-   これにより OCR サービスの呼び出しが 1 分あたり 10 に制限
+   
+   これにより OCR サービスの呼び出しが 1 分あたり 20 に制限
 
 3. Visual Studio に戻り「**UpdateImages**」プロジェクトを右クリック  
    メニューより「**デバッグ**」-「**新しいインスタンスを開始**」を選択
