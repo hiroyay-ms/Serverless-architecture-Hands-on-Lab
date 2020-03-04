@@ -1018,10 +1018,8 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 ### 参考情報
 
-- Azure Cosmos DB の概要  
-  <https://docs.microsoft.com/azure/cosmos-db/introduction>
-- SQL クエリの使用を開始する  
-  <https://docs.microsoft.com/azure/cosmos-db/sql-query-getting-started>
+- [Azure Cosmos DB の概要](https://docs.microsoft.com/azure/cosmos-db/introduction)
+- [SQL クエリの使用を開始する](https://docs.microsoft.com/azure/cosmos-db/sql-query-getting-started)
 
 ### Task 1: Azure Cosmos DB データ エクスプローラーの使用
 
@@ -1033,6 +1031,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 3. **Processed** コレクションを展開し、**Items** を選択、表示されるリストよりアイテムを選択
 
    ![Cosmos DB Processed Item](images/cosmosdb-processed-item-json.png)  
+   
    コレクションに追加された JSON ドキュメントを確認
 
 4. 同様の手順で **NeedsManualReview** コレクション内のアイテムを確認
