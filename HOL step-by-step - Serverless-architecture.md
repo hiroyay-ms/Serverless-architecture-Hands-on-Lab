@@ -810,7 +810,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
 
 2. 「イベント サブスクリプションの作成」ブレードが表示されるので、以下の構成オプションを指定
 
-   a. 名前（**queueplatefor   manualcheckupsub**）  
+   a. 名前（**queueplateformanualcheckupsub**）  
    b. イベント スキーマ（**イベント グリッド スキーマ** を選択）  
    c. トピックの種類（先の手順で作成した Event Grid トピックを選択）  
    d. イベントの種類（イベントの種類のフィルターに **queuePlateForManualCheckup** と入力）  
