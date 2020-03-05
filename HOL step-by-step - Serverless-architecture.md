@@ -480,8 +480,7 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
    |名前|値|
    | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | computerVisionApiUrl     | `http://<YOUR-SERVICE-NAME>.cognitiveservices.azure.com/vision/v2.0/ocr` <br>
-   Computer Vision API のエンドポイントに **vision/v2.0/ocr** を追加して指定|
+   | computerVisionApiUrl     | `https://<YOUR-SERVICE-NAME>.cognitiveservices.azure.com/vision/v2.0/ocr` <br>Computer Vision API のエンドポイントに **vision/v2.0/ocr** を追加して指定|
    | computerVisionApiKey     | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **computerVisionApiKey** シークレットの URI (シークレット識別子) を指定                |
    | eventGridTopicEndpoint   | Event Grid Topic のエンドポイント                                                                                                                     |
    | eventGridTopicKey        | `@Microsoft.KeyVault(SecretUri=referenceString)`<br>referenceString に Key Vault の **eventGridTopicKey** シークレットの URI (シークレット識別子) を指定                   |
