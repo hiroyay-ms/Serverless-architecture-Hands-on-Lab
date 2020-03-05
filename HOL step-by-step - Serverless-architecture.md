@@ -448,7 +448,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 所要時間：45 分
 
 Visual Studio に統合された Azure Functions ツールを使用して、ローカル環境で関数を開発およびデバッグし、Azure に展開します。TollBooth ソリューションには、必要なコードのほとんどが含まれていますが、Azure に展開する前に不足しているコードを追加する必要があります。（コードを追加する箇所は TODO としてマークされています。）  
-Visual Studio から Azure に展開する前に Azure ポータルで Function App にアプリケーション設定を構成します。誤ってセキュリティ情報が漏洩しないようにアプリケーション設定には、Cosmos DB の接続文字列や Comuputer Vision API の API Key 直接記述するのではなく、Key Vault シークレットの URI (シークレット識別子) を参照するように指定します。Function App が Key Vault にアクセスしてシークレットにアクセスできるように Function App へシステム割り当てマネージド ID を設定し、Key Vault 側にアクセス許可を与えるためのアクセス ポリシーを作成します。
+Visual Studio から Azure に展開する前に Azure ポータルで Function App にアプリケーション設定を構成します。誤ってセキュリティ情報が漏洩しないようにアプリケーション設定には、Cosmos DB の接続文字列や Comuputer Vision API の API Key を直接記述するのではなく、Key Vault シークレットの URI (シークレット識別子) を参照するように指定します。Function App が Key Vault にアクセスしてシークレットにアクセスできるように Function App へシステム割り当てマネージド ID を設定し、Key Vault 側にアクセス許可を与えるためのアクセス ポリシーを作成します。
 
 > 注意：NuGet パッケージのバージョンは更新しないでください。  
 > このソリューションは、現在定義されている NuGet パッケージのバージョンで動作するように構築されています。
