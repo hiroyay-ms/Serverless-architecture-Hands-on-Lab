@@ -1185,7 +1185,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 所要時間：45 分
 
-この演習では、CI/CD のために ProcessImage 関数を含む Function App を構成します。最初に Azure DevOps 組織とプロジェクトを作成し、Visual Studio からソリューションをソース管理に追加します。その後 Azure Pipelines から Azure Repos にコードがコミットされるとビルド、リリースを行うパイプラインを作成します。最後に新しいブランチを作成し、変更したコードをプッシュ、コード レビュー後にブランチをマージし、新しいバージョンの関数を Azure 環境に展開します。
+この演習では、CI/CD のために ProcessImage 関数を含む Function App を構成します。最初に Azure DevOps 組織とプロジェクトを作成し、Visual Studio からソリューションをソース管理に追加します。その後 Azure Pipelines から、Azure Repos にコードがコミットされるとビルド、リリースを行うパイプラインを作成します。最後に新しいブランチを作成し、変更したコードをプッシュ、コード レビュー後にブランチをマージし、新しいバージョンの関数を Azure 環境に展開します。
 
 ### 参考情報
 
@@ -1409,7 +1409,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
    <img src="images/devops-add-pipeline-18.png" width="700" />
 
 10. 「Pipelines」をクリック、先の手順で作成したパイプラインを選択
-11. 実行中の項目を選択
+11. 実行中の項目を選択 (Build ステージは承認なしに実行されるため、未完了の場合には少し待つ)
 
     <img src="images/devops-add-pipeline-19.png" width="700" />
 
