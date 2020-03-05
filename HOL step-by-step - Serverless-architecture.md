@@ -321,7 +321,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    <img src="images/new-cosmosdb-01.png" width="350" />
 
-3. 「Azure Cosmos DB アカウントの作成」の「基本」ブレードで、以下の構成オプションを指定
+3. 「Azure Cosmos DB アカウントの作成」の「基本」ブレードで、以下の構成オプションを指定  
    a. リソース グループ（先の手順で作成したリソース グループを選択）  
    b. アカウント名（小文字、数字、'-' のみ、3 から 31 文字で一意の名前）  
    c. API（**コア (SQL)** を選択）  
