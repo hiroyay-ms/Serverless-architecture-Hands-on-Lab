@@ -1502,7 +1502,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
    ![DevOps Add Notification-1](images/devops-add-notification-02.png)
 
-3. 「\*\*＋ New subscription」をクリック
+3. 「**＋ New subscription」をクリック
 
    <img src="images/devops-add-notification-03.png" width="700" />
 
