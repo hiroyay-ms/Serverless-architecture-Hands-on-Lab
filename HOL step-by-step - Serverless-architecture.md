@@ -1173,7 +1173,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
        <img src="images/logic-app-designer-15.png" width="500" />
 
-24. 関数にナンバー プレート検出のロジックが実装されていないためアラート メールを受信
+24. ExportLicensePlates 関数にナンバー プレート検出のロジックが実装されていないためアラート メールを受信
 
     ![Logic App Designer-16](images/logic-app-designer-16.png)
 
