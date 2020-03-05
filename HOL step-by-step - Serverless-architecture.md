@@ -1059,7 +1059,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 所要時間：30 分
 
-データ エクスポートを行うワークフローを Logic App を使用して構成します。Logic App は定期的に実行され、ExportLicensePlates 関数を呼び出します。ExportLicensePlates 関数は Cosmos DB に格納されたアイテムの中から exported メンバーの値が false 　のものを CSV ファイルへ抽出し、Blob ストレージへ保存します。エクスポートするレコードがない場合は、Logic App からレコードがない旨を記載した電子メールを送信します。
+データ エクスポートを行うワークフローを Logic App を使用して構成します。Logic App は定期的に実行され、ExportLicensePlates 関数を呼び出します。ExportLicensePlates 関数は Cosmos DB に格納されたアイテムの中から exported メンバーの値が false のものを CSV ファイルへ抽出し、Blob ストレージへ保存します。エクスポートするレコードがない場合は、Logic App からレコードがない旨を記載した電子メールを送信します。
 
 ### 参考情報
 
