@@ -429,7 +429,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    （シークレット作成画面）  
    <img src="images/create-secret.png" width="400" />
 
-   シークレット作成時の名前と値のペアは以下の表を参考  
+   シークレット作成時の名前と値のペアは以下の表を参考 (blobStorageConnection は Task 3. で作成したストレージ アカウントのものを記載)  
    各シークレットは名前と値の指定のみで、他のフィールドはデフォルト値のまま作成
    | | |
    |:--|:-:|
