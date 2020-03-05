@@ -56,11 +56,17 @@ February 2020
 - [Exercise 7: Function App の CI/CD 構成](#exercise-7-function-app-の-cicd-構成)
     - [参考情報](#参考情報-6)
     - [Task 1: Azure DevOps 組織とプロジェクトの作成](#task-1-azure-devops-組織とプロジェクトの作成)
+        - [Azure DevOps 組織を新規作成する場合](#azure-devops-組織を新規作成する場合)
+        - [既存の Azure DevOps 組織を使用し、プロジェクトを作成する場合](#既存の-azure-devops-組織を使用しプロジェクトを作成する場合)
     - [Task 2: プロジェクトへのユーザーの追加](#task-2-プロジェクトへのユーザーの追加)
     - [Task 3: Azure Repos へのソース コードの追加](#task-3-azure-repos-へのソース-コードの追加)
     - [Task 4: Azure Pipelines の作成](#task-4-azure-pipelines-の作成)
+        - [リリース前の事前承認機能の追加](#リリース前の事前承認機能の追加)
+        - [パイプラインの実行（ビルド＆リリース）](#パイプラインの実行ビルド＆リリース)
     - [Task 5: ブランチの作成と ExportLicensePlates 関数の変更](#task-5-ブランチの作成と-exportlicenseplates-関数の変更)
     - [Task 6: プルリクエストの作成](#task-6-プルリクエストの作成)
+        - [プルリクエストの通知設定](#プルリクエストの通知設定)
+        - [プルリクエストの作成](#プルリクエストの作成)
     - [Task 7: ブランチのマージと新バージョンの Azure への展開](#task-7-ブランチのマージと新バージョンの-azure-への展開)
 - [Exercise 8: ワークフローの実行とエクスポート データの確認](#exercise-8-ワークフローの実行とエクスポート-データの確認)
     - [Task 1: Logic App の実行](#task-1-logic-app-の実行)
@@ -1063,12 +1069,9 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 ### 参考情報
 
-- Logic Apps を使用してワークフローを作成  
-  <https://docs.microsoft.com/azure/logic-apps/quickstart-create-first-logic-app-workflow>
-- Logic Apps のコネクタ  
-  <https://docs.microsoft.com/azure/connectors/apis-list>
-- Logic Apps の式で関数を使用するためのリファレンス ガイド  
-  <https://docs.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference>
+- [Logic Apps を使用してワークフローを作成](https://docs.microsoft.com/azure/logic-apps/quickstart-create-first-logic-app-workflow)
+- [Logic Apps のコネクタ](https://docs.microsoft.com/azure/connectors/apis-list)
+- [Logic Apps の式で関数を使用するためのリファレンス ガイド](https://docs.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference)
 
 ### Task 1: Logic App の作成
 
@@ -1160,7 +1163,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
        <br />
        <img src="images/logic-app-designer-13.png" width="500" />
 
-    > 動的なコンテンツを使用することで、他のコントロールから返されるパラメーターなどの取得が可
+    > 動的なコンテンツを使用することで、他のコントロールから返されるパラメーターなどの取得が可能
 
 21. ツール バーの「**保存**」をクリック
 22. 「実行」をクリックし、Logic App を実行
@@ -1189,26 +1192,18 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 ### 参考情報
 
-- Azure DevOps  
-  <https://azure.microsoft.com/services/devops/>
-- What is Azure DevOps?  
-  <https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops>
-- What is Azure Repos?  
-  <https://docs.microsoft.com/azure/devops/repos/get-started/what-is-repos?view=azure-devops>
-- What is Azure Pipelines?  
-  <https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops>
-- Use Azure Pipelines  
-  <https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops>
-- Define approvals and checks  
-  <https://docs.microsoft.com/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass>
-- Azure DevOps を使用した継続的デリバリー  
-  <https://docs.microsoft.com/azure/azure-functions/functions-how-to-azure-devops?tabs=csharp>
-- YAML Schema reference  
-  <https://docs.microsoft.com/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema>
+- [Azure DevOps](https://azure.microsoft.com/services/devops/)
+- [What is Azure DevOps?](https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops?view=azure-devops)
+- [What is Azure Repos?](https://docs.microsoft.com/azure/devops/repos/get-started/what-is-repos?view=azure-devops)
+- [What is Azure Pipelines?](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)
+- [Use Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops)
+- [Define approvals and checks](https://docs.microsoft.com/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass)
+- [Azure DevOps を使用した継続的デリバリー](https://docs.microsoft.com/azure/azure-functions/functions-how-to-azure-devops?tabs=csharp)
+- [YAML Schema reference](https://docs.microsoft.com/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema)
 
 ### Task 1: Azure DevOps 組織とプロジェクトの作成
 
-> Azure DevOps 組織を新規作成する場合
+#### Azure DevOps 組織を新規作成する場合
 
 1. Web ブラウザーの新しいタブまたはインスタンスを起動  
    「<https://azure.microsoft.com/services/devops/>」 を開く
@@ -1254,7 +1249,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 11. 画面左上の「**Azure DevOps**」をクリック
     「**TollBooth**」をクリックし、プロジェクトのサマリ画面へ移動
 
-> 既存の Azure DevOps 組織を使用し、プロジェクトを作成する場合
+#### 既存の Azure DevOps 組織を使用し、プロジェクトを作成する場合
 
 1. Web ブラウザーの新しいタブまたはインスタンスを起動  
    「<https://azure.microsoft.com/services/devops/>」 を開く
@@ -1368,7 +1363,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
     <img src="images/devops-add-pipeline-09.png" width="700" />
 
-> リリース前の事前承認機能の追加
+#### リリース前の事前承認機能の追加
 
 1. 「**Pipelines**」-「**Environments**」をクリック  
    「**development**」を選択
@@ -1389,7 +1384,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 5. 「**Create**」をクリック
 
-> パイプラインの実行（ビルド＆リリース）
+#### パイプラインの実行（ビルド＆リリース）
 
 6. メニューの「**Pipelines**」をクリック  
    先の手順で作成したパイプラインを選択
@@ -1494,7 +1489,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 ### Task 6: プルリクエストの作成
 
-> プルリクエストの通知設定
+#### プルリクエストの通知設定
 
 1. コード レビューを行うユーザーで Azure DevOps へサインイン
 2. 画面右上の人型のアイコンをクリック  
@@ -1519,7 +1514,7 @@ Azure Cosmos DB SQL API アカウントでは、JSON クエリ言語として SQ
 
 7. 「**Finish**」をクリックし、通知の作成を完了
 
-> プルリクエストの作成
+#### プルリクエストの作成
 
 8. コード レビューアーとは別のユーザーで Azure DevOps へサインイン
 9. 「**Repos**」-「**Pull Request**」を選択
