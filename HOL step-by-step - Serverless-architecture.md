@@ -829,7 +829,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
 
 1. 「QueuePlateForManualCheckup」関数を展開し「**統合**」をクリック
 2. 「**＋ 新しい出力**」をクリックし、出力リストから「Azure Cosmos DB」を選択し「**選択**」をクリック
-3. データベース名に「**LicensePlate**」、コレクション名に「**NeedsManualReview**」を入力
+3. データベース名に「**LicensePlates**」、コレクション名に「**NeedsManualReview**」を入力
 4. Azure Cosmos DB アカウント接続で SavePlateData 関数で作成した接続を選択
 
    <img src="images/add-function-app-in-portal-22.png" width="600" />
