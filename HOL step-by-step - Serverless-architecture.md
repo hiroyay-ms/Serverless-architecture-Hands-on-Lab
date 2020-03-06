@@ -744,7 +744,7 @@ Azure ポータルを使用して .NET Core（C#）で２つの新しい関数�
 
    <img src="images/add-function-app-in-portal-12.png" width="600" />
 
-3. データベース名に「**LicensePlate**」、コレクション名に「**Processed**」を入力
+3. データベース名に「**LicensePlates**」、コレクション名に「**Processed**」を入力
 
 4. Azure Cosmos DB 出力フォームの「**Azure Cosmos DB アカウントの接続**」の「**新規**」をクリック
 
