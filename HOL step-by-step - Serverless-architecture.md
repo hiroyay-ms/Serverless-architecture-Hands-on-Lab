@@ -268,7 +268,7 @@ Application Insights は、後の手順で追加しますので、Function Apps 
 
    a. ストレージ アカウント（新規作成）  
    b. オペレーティング システム（**Windows**）  
-   c. プランの種類（**従量課金プラン**）  
+   c. プランの種類（**消費量 (サーバーレス)**）  
    <img src="images/new-function1-host.png" width="500" />
 
 7. 「**次: 監視 >**」をクリック
