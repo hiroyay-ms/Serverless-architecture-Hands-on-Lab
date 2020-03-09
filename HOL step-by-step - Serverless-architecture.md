@@ -440,10 +440,10 @@ Application Insights は、後の手順で追加しますので、Function Apps 
    | | |
    |:--|:-:|
    |**Name**|**Value**|
-   |computerVisionApiKey|Computer Vision API Key|
-   |eventGridTopicKey|Event Grid Topic access Key|
-   |cosmosDBAuthorizationKey| Cosmos DB Primary Key|
-   |blobStorageConnection|Blob storage connection string|
+   |computerVisionApiKey|Computer Vision API キー|
+   |eventGridTopicKey|Event Grid トピック キー|
+   |cosmosDBAuthorizationKey| Cosmos DB プライマリ キー|
+   |blobStorageConnection|ストレージ アカウント接続文字列|
 
    シークレット作成後の画面には以下のようなリストが表示される
 
@@ -501,6 +501,20 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
    （例：Computer Vision API のエンドポイントとキーの取得）
 
    <img src="images/computer-vision-endopoint-and-key.png" width="600" />
+
+   （例：Key Vault シークレット識別子の取得）
+   
+   - シークレット名のクリック
+
+   <img src="images/key-vault-secret-get-1.png" width="600" />
+
+   - 表示されるバージョンをクリック
+
+   <img src="images/key-vault-secret-get-2.png" width="700" />
+
+   - シークレット識別子をコピー
+
+   <img src="images/key-vault-secret-get-3.png" width="400" />
 
    \*アプリケーション設定の入力画面
 
