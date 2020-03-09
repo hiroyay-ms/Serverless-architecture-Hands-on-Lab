@@ -502,8 +502,12 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
    <img src="images/computer-vision-endopoint-and-key.png" width="600" />
 
-   （例：Key Vault シークレット識別子の取得）
-   
+   \*アプリケーション設定の入力画面
+
+   <img src="images/add-application-settings.png" width="750" />
+
+   \* Key Vault のシークレット URI は、対象 Key Vault の「シークレット」から目的のシークレットを選択して確認
+
    - シークレット名のクリック
 
    <img src="images/key-vault-secret-get-1.png" width="600" />
@@ -513,14 +517,6 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
    <img src="images/key-vault-secret-get-2.png" width="700" />
 
    - シークレット識別子をコピー
-
-   <img src="images/key-vault-secret-get-3.png" width="400" />
-
-   \*アプリケーション設定の入力画面
-
-   <img src="images/add-application-settings.png" width="600" />
-
-   \* Key Vault のシークレット URI は、対象 Key Vault の「シークレット」から目的のシークレットを選択して確認
 
    <img src="images/add-secret-uri.png" width="600" />
    
