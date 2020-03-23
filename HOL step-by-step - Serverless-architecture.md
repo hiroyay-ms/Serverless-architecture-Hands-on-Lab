@@ -527,7 +527,7 @@ Visual Studio から Azure に展開する前に Azure ポータルで Function 
 
 ### Task 2: Key Vault へアクセスするためのシステム割り当てマネージド ID の生成
 
-1. Function App の管理ブレードで「プラットフォーム機能」を開く
+1. Application 設定を行った Function App の管理ブレードで「プラットフォーム機能」を開く
 2. **ID** を開く
 
    <img src="images/functionapp-platform.png" width="400" />
